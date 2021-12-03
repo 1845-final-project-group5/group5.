@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Memory Game</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="jquery-ui.min.css">
+    <link href="tabs.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Memory Game</h1>
+        <p id="new_game"><a href="index.html">New Game</a></p>
+        <p id="player">&nbsp;</p>
+        <p id="high_score">&nbsp;</p>
+        <p id="correct">&nbsp;</p>
+        <div class="clear"></div>
+    </header>
+    <main>
+        <div class="tabs">
+            <div role="tablist" aria-label="Entertainment">
+                <button role="tab" aria-selected="true" aria-controls="nils-tab" id="nils"> Play Game</button>
+                <button role="tab" aria-selected="false" aria-controls="agnes-tab" id="agnes" tabindex="-1"> View rules</button>
+                <button role="tab" aria-selected="false" aria-controls="complexcomplex" id="complex" tabindex="-1" data-deletable="">Settings</button>
+            </div>
+            <div tabindex="0" role="tabpanel" id="nils-tab" aria-labelledby="nils">
+                <div id="cards"></div>
+            </div>
+            <div tabindex="0" role="tabpanel" id="agnes-tab" aria-labelledby="agnes" hidden="">
+                <fieldset>
+                    <legend>How to play the Memory game</legend>
+                    <ul>
+                        <li>The cards are placed face down. Each card has a matching card.</li>
+                        <li>For each turn, the player select two cards.</li>
+                        <li>If the cards match, they are removed from the board.</li>
+                        <li>If the cards don't match, they are turned face down again.</li>
+                        <li>At the end of the game, the player receives a score based on the number of correct selections that were made.</li>
+                    </ul>
+                </fieldset>
+            </div>
+            <div tabindex="0" role="tabpanel" id="complexcomplex" aria-labelledby="complex" hidden="">
+                <label for='player_name'>Player name:</label>
+                <input type='text' id='player_name'><br>
+
+                <label for='num_cards'>Number of cards:</label>
+                <select id='num_cards'>
+                    <option>48</option>
+                    <option>40</option>
+                    <option>32</option>
+                    <option>24</option>
+                    <option>16</option>
+                    <option>8</option>
+                </select><br>
+
+                <input type='button' id='save_settings' value='Save Settings'>
+            </div>
+        </div>
+    </main>
+    <script src="tabs.js">
+    </script>
+</body>
+
+</html>
